@@ -1,0 +1,13 @@
+<div>
+    <h1>Padre Deportes</h1>
+    
+    @if(deporteFavorito != ""){
+      <hr>  
+      <h3>Mi deporte favorito es : {{deporteFavorito}}</h3>
+      <hr>
+    }
+    
+    @for(sport of deportes; track sport){
+        <app-hijo-deporte [deporte]="sport" (seleccionarDeporteFavorito) = "seleccionarDeporteFavorito($event)" ></app-hijo-deporte>
+    }
+</div>

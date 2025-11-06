@@ -1,0 +1,24 @@
+<div>
+    <h1>Modelos Producto Angular</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(prod of productos; track prod){
+                <tr>
+                    <td >{{prod.nombre}}</td>
+                    <td>
+                        <img src={{prod.imagen}} style="width: 150px;"/>
+                    </td>
+                    <td >{{prod.precio}} €</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+</div>
