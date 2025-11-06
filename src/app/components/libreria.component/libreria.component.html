@@ -1,0 +1,11 @@
+<div>
+    <h1>Libreria</h1>
+    @if(comicFavorito){
+        <hr>
+        <h3>Comic Favorito: {{comicFavorito.titulo}}</h3>
+    }
+
+    @for(comic in libreria; track comic){
+        <app-comic></app-comic>
+    }
+</div>
