@@ -15,5 +15,17 @@
         <li>
             <a [routerLink]="['/libreria']">Libreria</a>
         </li>    
+                <!-- Theme dropdown -->
+        <li class="dropdown">
+                
+            <button type="button" class="btn btn-sm btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Tema
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#" (click)="setDarkMode(false); $event.preventDefault()">Modo claro</a></li>
+                <li><a class="dropdown-item" href="#" (click)="setDarkMode(true); $event.preventDefault()">Modo oscuro</a></li>
+            </ul>
+                
+        </li>
     </ul>
 </div>

@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Dark theme support toggled by adding `dark-mode` to <body> */
+body.dark-mode{
+	background: #0b1220;
+	color: #e6eef8;
+}
+
+body.dark-mode .libreria-container{
+	background: transparent;
+	color: #e6eef8;
+}
+
+body.dark-mode .comic-card{
+	background: #0f1724;
+	color: #e6eef8;
+	box-shadow: 0 8px 22px rgba(2,6,23,0.6);
+}
+
+body.dark-mode .create-section{
+	background: #071026;
+	border-color: rgba(255,255,255,0.04);
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode textarea,
+body.dark-mode select{
+	background: #071026;
+	border: 1px solid rgba(255,255,255,0.06);
+	color: #e6eef8;
+}
+
+body.dark-mode .btn-create{
+	background: linear-gradient(90deg,#1e88e5,#42a5f5);
+	color: #fff;
+}
+
+/* Ensure Bootstrap dropdowns look OK on dark backgrounds */
+body.dark-mode .dropdown-menu{
+	background: #071026;
+	color: #e6eef8;
+}
+body.dark-mode .dropdown-item{
+	color: #e6eef8;
+}
+body.dark-mode .dropdown-item:hover{ background: rgba(255,255,255,0.03) }
