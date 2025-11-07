@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Comic } from '../../models/Comic';
 
 @Component({
@@ -10,6 +10,10 @@ import { Comic } from '../../models/Comic';
 export class LibreriaComponent {
   public comics: Array<Comic>;
   public comicFavorito!: Comic;
+  @ViewChild("cajanombre") cajaNombre!: ElementRef
+  @ViewChild("cajadescripcion") cajaDescripcion!: ElementRef
+  @ViewChild("cajaimagen") cajaImagen!: ElementRef
+
   constructor(){
     this.comics = [
       new Comic(
@@ -24,7 +28,7 @@ export class LibreriaComponent {
       ),
       new Comic(
         "Guardianes de la Galaxia",
-        "https://cdn.normacomics.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/g/u/guardianes_galaxia_guadianes_infinito.jpg",
+        "https://thecomicverse.com.co/wp-content/uploads/2022/12/Soy_Groot_0.webp",
         "Yo soy Groot"
       ),
       new Comic(
@@ -37,6 +41,26 @@ export class LibreriaComponent {
       "https://i.pinimg.com/originals/e1/d8/ff/e1d8ff4aeab5e567798635008fe98ee1.png",
       "Todd MacFarlane"
       )
-    ]; 
+    ];     
+  }
+
+  seleccionarComicFavorito(event:any): void{
+      this.comicFavorito = event
+  }
+
+  eliminarComic(event:any):void{
+    for (const comic of this.comics) {
+        if(comic == event){
+          this.comics.splice(this.comics.indexOf(comic), 1)
+        }
+    }
+  }
+
+  crearComic(): void{
+    let nombre = this.cajaNombre.nativeElement.value
+    let descripcion = this.cajaDescripcion.nativeElement.value
+    let imagen = this.cajaImagen.nativeElement.value
+    let comic = new Comic(nombre, imagen, descripcion)
+    this.comics.push(comic)
   }
 }

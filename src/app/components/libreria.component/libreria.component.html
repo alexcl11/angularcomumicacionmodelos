@@ -1,11 +1,47 @@
-<div>
-    <h1>Libreria</h1>
-    @if(comicFavorito){
-        <hr>
-        <h3>Comic Favorito: {{comicFavorito.titulo}}</h3>
-    }
+<div class="libreria-container">
+    <h1 class="page-title">Librería</h1>
 
-    @for(comic in libreria; track comic){
-        <app-comic></app-comic>
+    @if(comicFavorito){
+        <hr class="divider">
+        <div class="favorite">
+            <h3>Comic favorito</h3>
+            <div class="favorite-card">
+                <strong>{{comicFavorito.titulo}}</strong>
+                <p class="fav-desc">{{comicFavorito.descripcion}}</p>
+            </div>
+        </div>
     }
+    <div class="create-section">
+        <h2>Crear cómic nuevo</h2>
+        <form class="create-form" (ngSubmit)="crearComic()">
+            <div class="form-grid">
+                <div class="form-field">
+                    <label for="cajanombre">Nombre</label>
+                    <input id="cajanombre" type="text" name="cajanombre" #cajanombre placeholder="Título del cómic" />
+                </div>
+
+                <div class="form-field">
+                    <label for="cajaimagen">Imagen (URL)</label>
+                    <input id="cajaimagen" type="text" name="cajaimagen" #cajaimagen placeholder="https://..." />
+                </div>
+
+                <div class="form-field full">
+                    <label for="cajadescripcion">Descripción</label>
+                    <input id="cajadescripcion" type="text" name="cajadescripcion" #cajadescripcion placeholder="Breve descripción" />
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn-create" type="submit">Crear</button>
+            </div>
+        </form>
+    </div>
+    <div class="comics-grid">
+        @for(c of comics; track c){
+            <div class="comic-item">
+                <app-comic [comic]="c" (seleccionarComicFavorito)="seleccionarComicFavorito($event)"
+                 (eliminarComic)="eliminarComic($event)"></app-comic>
+            </div>
+        }
+    </div>
 </div>

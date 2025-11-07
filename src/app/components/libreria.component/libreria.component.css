@@ -1,0 +1,133 @@
+/* Libreria styles: container, grid and favorite card */
+.libreria-container{
+	max-width: 1100px;
+	margin: 24px auto;
+	padding: 0 16px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	color: #222;
+}
+
+.page-title{
+	margin: 0 0 12px 0;
+	font-size: 28px;
+	letter-spacing: 0.4px;
+}
+
+.divider{
+	border: none;
+	height: 1px;
+	background: linear-gradient(90deg, rgba(0,0,0,0.06), rgba(0,0,0,0.12));
+	margin: 12px 0;
+}
+
+.favorite{
+	background: #fffef6;
+	border-left: 4px solid #ffca28;
+	padding: 12px;
+	margin-bottom: 18px;
+	border-radius: 6px;
+}
+
+.favorite-card{
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.fav-desc{
+	margin: 0;
+	color: #555;
+	font-size: 14px;
+}
+
+.comics-grid{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 16px;
+}
+
+.comic-item{
+	display: block;
+}
+
+@media (max-width: 480px){
+	.page-title{ font-size: 22px }
+	.comics-grid{ gap: 12px }
+}
+
+/* Small utility for aligning inside cards */
+.comic-item .comic-card{ height: 100%; }
+
+/* Form styles */
+.create-section{
+	background: #fbfbff;
+	border: 1px solid rgba(20,30,40,0.04);
+	padding: 14px;
+	border-radius: 8px;
+	margin: 18px 0;
+}
+
+.create-section h2{
+	margin: 0 0 10px 0;
+	font-size: 20px;
+}
+
+.create-form .form-grid{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+	align-items: end;
+}
+
+.create-form .form-field{
+	display: flex;
+	flex-direction: column;
+}
+
+.create-form .form-field.full{ grid-column: 1 / -1; }
+
+.create-form label{
+	font-size: 13px;
+	color: #333;
+	margin-bottom: 6px;
+}
+
+.create-form input[type="text"],
+.create-form textarea,
+.create-form select{
+	padding: 10px 12px;
+	border-radius: 6px;
+	border: 1px solid rgba(15,20,30,0.09);
+	background: #fff;
+	font-size: 14px;
+	outline: none;
+	transition: box-shadow .12s ease, border-color .12s ease;
+}
+
+.create-form input[type="text"]:focus{
+	box-shadow: 0 6px 18px rgba(33,150,243,0.08);
+	border-color: rgba(33,150,243,0.6);
+}
+
+.form-actions{
+	margin-top: 12px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.btn-create{
+	background: linear-gradient(90deg,#1e88e5,#42a5f5);
+	color: #fff;
+	padding: 10px 16px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.btn-create:hover{ opacity: 0.95 }
+
+@media (max-width: 740px){
+	.create-form .form-grid{ grid-template-columns: 1fr }
+}

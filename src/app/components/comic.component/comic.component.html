@@ -1,5 +1,11 @@
-<div>
-    <h3>{{comic.titulo}}</h3>
-    <p>{{comic.descripcion}}</p>
-    <img src={{comic.imagen}} style="width: 150px"/>
+<div class="comic-card">
+    <img class="comic-image" src={{comic.imagen}} alt="{{comic.titulo}}" />
+    <div class="comic-body">
+        <h3 class="comic-title">{{comic.titulo}}</h3>
+        <p class="comic-desc">{{comic.descripcion}}</p>
+        <div class="comic-actions">
+            <button class="btn-fav" (click)="seleccionarComoFavorito()">Seleccionar como favorito</button>
+            <button class="btn-eliminar" (click)="eliminarComicLibreria()">Eliminar</button>
+        </div>
+    </div>
 </div>

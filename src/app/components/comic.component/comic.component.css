@@ -1,0 +1,77 @@
+/* Comic card styles */
+.comic-card{
+	display: flex;
+	flex-direction: column;
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 6px 18px rgba(11,18,30,0.06);
+	overflow: hidden;
+	padding: 12px;
+	transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.comic-card:hover{
+	transform: translateY(-4px);
+	box-shadow: 0 12px 30px rgba(11,18,30,0.08);
+}
+
+.comic-image{
+	width: 100%;
+	height: 160px;
+	object-fit: cover;
+	border-radius: 6px;
+	margin-bottom: 10px;
+}
+
+.comic-body{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.comic-title{
+	margin: 0;
+	font-size: 18px;
+	color: #222;
+}
+
+.comic-desc{
+	margin: 0;
+	color: #555;
+	font-size: 14px;
+}
+
+.comic-actions{
+	margin-top: 6px;
+}
+
+.btn-fav{
+	background: linear-gradient(90deg,#1976d2,#42a5f5);
+	color: #fff;
+	border: none;
+	padding: 8px 12px;
+	border-radius: 6px;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.btn-fav:hover{
+	opacity: 0.95;
+}
+.btn-eliminar{
+	background: linear-gradient(90deg,#f70c0c, #d36b6b);
+	color: #fff;
+	border: none;
+	padding: 8px 12px;
+	border-radius: 6px;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.btn-eliminar:hover{
+	opacity: 0.95;
+}
+
+@media (min-width: 720px){
+	.comic-card{ padding: 14px; }
+}
